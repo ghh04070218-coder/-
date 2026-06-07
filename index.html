@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RiskLens CN 是一个面向中文内容、商品页和副业项目的合规风险扫描与改写建议工具。"
+    />
+    <title>RiskLens CN - 风险扫描与改写建议</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">RiskLens CN</p>
+          <h1>中文内容风险扫描与改写建议</h1>
+        </div>
+        <a class="ghost-link" href="./docs/pro-plan.md">Pro 路线</a>
+      </header>
+
+      <section class="workspace" aria-label="风险扫描工作台">
+        <div class="panel input-panel">
+          <div class="panel-header">
+            <div>
+              <h2>输入主题或文案</h2>
+              <p>适合商品详情、项目介绍、推广笔记、私域话术和开源项目 README。</p>
+            </div>
+            <button id="sampleButton" type="button">填入示例</button>
+          </div>
+
+          <label class="field">
+            <span>使用场景</span>
+            <select id="scenario">
+              <option value="general">通用发布</option>
+              <option value="commerce">商品/服务销售</option>
+              <option value="finance">投资/收益/副业</option>
+              <option value="health">健康/医疗相关</option>
+              <option value="education">教育/简历/论文</option>
+              <option value="opensource">开源项目</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>待扫描文本</span>
+            <textarea
+              id="content"
+              placeholder="粘贴你准备发布的标题、详情页、推广文案或项目说明..."
+            ></textarea>
+          </label>
+
+          <div class="actions">
+            <button id="scanButton" type="button">扫描风险</button>
+            <button id="clearButton" class="secondary" type="button">清空</button>
+          </div>
+        </div>
+
+        <aside class="panel result-panel" aria-live="polite">
+          <div class="score-card">
+            <p class="eyebrow">风险等级</p>
+            <strong id="riskLevel">待扫描</strong>
+            <span id="riskSummary">输入文案后生成风险报告。</span>
+          </div>
+
+          <div class="metric-grid">
+            <div>
+              <span id="issueCount">0</span>
+              <p>风险点</p>
+            </div>
+            <div>
+              <span id="rewriteCount">0</span>
+              <p>改写建议</p>
+            </div>
+            <div>
+              <span id="checkCount">6</span>
+              <p>发布检查</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="report-grid">
+        <div class="panel">
+          <h2>风险发现</h2>
+          <div id="findings" class="empty-state">暂无结果。</div>
+        </div>
+        <div class="panel">
+          <h2>改写建议</h2>
+          <div id="rewrites" class="empty-state">暂无建议。</div>
+        </div>
+        <div class="panel wide">
+          <h2>发布前清单</h2>
+          <div id="checklist" class="checklist"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
