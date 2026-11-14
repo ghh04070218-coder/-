@@ -53,3 +53,9 @@ http://localhost:4173
 ## 许可证
 
 建议免费版使用 MIT License。Pro 规则库、模板和行业包不要放进公开仓库。
+
+## 版本执行范围
+
+商业化条目为后续方向，不代表已实现。首发计划及公开/私有边界、任务切分和验收见 [release-scope](docs/release-scope.md)。当前仅免费版可用，Pro 尚未交付。
+
+开发验证：`npm test`；免费打包：`bash scripts/package.sh`。
